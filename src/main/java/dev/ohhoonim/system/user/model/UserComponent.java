@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import dev.ohhoonim.component.model.unit.ValueObject;
 import dev.ohhoonim.system.user.model.UserComponent.AccessSecurity;
 import dev.ohhoonim.system.user.model.UserComponent.AllowedIpRange;
 import dev.ohhoonim.system.user.model.UserComponent.AuthSourceCode;
@@ -17,6 +18,7 @@ import dev.ohhoonim.system.user.model.UserComponent.PasswordCredentials;
 import dev.ohhoonim.system.user.model.UserComponent.UserAuthorization;
 import dev.ohhoonim.system.user.model.UserComponent.UserProfile;
 
+@ValueObject
 public sealed interface UserComponent permits UserProfile, LoginInfo, PasswordCredentials,
         UserAuthorization, AccessSecurity, AllowedIpRange, AuthorityDelegation, MenuAction, AuthSourceCode {
     

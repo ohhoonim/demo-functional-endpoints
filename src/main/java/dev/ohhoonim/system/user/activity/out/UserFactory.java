@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.function.Function;
 import dev.ohhoonim.component.model.factory.ArFactory;
+import dev.ohhoonim.component.model.unit.Factory;
 import dev.ohhoonim.system.user.model.User;
 import dev.ohhoonim.system.user.model.UserComponent;
 import dev.ohhoonim.system.user.model.UserComponent.LoginInfo;
@@ -12,6 +13,7 @@ import dev.ohhoonim.system.user.model.UserComponent.UserProfile;
 import dev.ohhoonim.system.user.model.UserException;
 import dev.ohhoonim.system.user.model.UserId;
 
+@Factory
 public interface UserFactory extends ArFactory<User, UserId, UserComponent>{
     default List<Class<? extends UserComponent>> forLogin() {
         return List.of(UserProfile.class, LoginInfo.class);
